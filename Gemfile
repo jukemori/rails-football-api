@@ -46,3 +46,4 @@ end
 
 gem 'graphql'
 gem 'jwt'
+gem 'faker'

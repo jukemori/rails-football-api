@@ -4,5 +4,6 @@ module Types
   class MutationType < Types::BaseObject
     field :create_user, mutation: Mutations::CreateUser
     field :login, mutation: Mutations::Login
+    field :create_favorite_player, mutation: Mutations::CreateFavoritePlayer
   end
 end

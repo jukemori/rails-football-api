@@ -47,3 +47,5 @@ end
 gem 'graphql'
 gem 'jwt'
 gem 'faker'
+
+gem 'sprockets', '~> 4.0'

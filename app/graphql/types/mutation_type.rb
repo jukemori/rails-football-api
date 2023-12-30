@@ -5,5 +5,6 @@ module Types
     field :create_user, mutation: Mutations::CreateUser
     field :login, mutation: Mutations::Login
     field :create_favorite_player, mutation: Mutations::CreateFavoritePlayer
+    field :delete_favorite_player, mutation: Mutations::DeleteFavoritePlayer
   end
 end

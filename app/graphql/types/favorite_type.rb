@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Types
-  class FavoritePlayerType < Types::BaseObject
+  class FavoriteType < Types::BaseObject
     field :id, ID, null: false
     field :user, UserType, null: false
     field :player, PlayerType, null: false

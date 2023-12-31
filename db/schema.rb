@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_30_042321) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_31_034657) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "favorite_players", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "player_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_favorite_players_on_player_id"
-    t.index ["user_id"], name: "index_favorite_players_on_user_id"
+    t.index ["player_id"], name: "index_favorites_on_player_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -38,6 +38,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_30_042321) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "favorite_players", "players"
-  add_foreign_key "favorite_players", "users"
+  add_foreign_key "favorites", "players"
+  add_foreign_key "favorites", "users"
 end

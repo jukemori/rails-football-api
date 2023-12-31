@@ -1,6 +1,6 @@
 User.destroy_all
 Player.destroy_all
-FavoritePlayer.destroy_all
+Favorite.destroy_all
 
 5.times do
   User.create!(
@@ -19,7 +19,7 @@ end
 
 User.all.each do |user|
   Player.all.sample(5).each do |player|
-    FavoritePlayer.create!(
+    Favorite.create!(
       user: user,
       player: player
     )

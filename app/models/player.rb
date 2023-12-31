@@ -1,4 +1,4 @@
 class Player < ApplicationRecord
-  has_many :favorite_players, dependent: :destroy
-  has_many :users, through: :favorite_players
+  has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
 end

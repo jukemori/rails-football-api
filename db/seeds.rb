@@ -1,27 +1,40 @@
+football_players = [
+  "Lionel Messi",
+  "Cristiano Ronaldo",
+  "Neymar",
+  "Kylian Mbappé",
+  "Mohamed Salah",
+  "Luka Modrić",
+  "Kevin De Bruyne",
+  "Sergio Ramos",
+  "Luis Suárez",
+  "Eden Hazard",
+]
+
 User.destroy_all
 Player.destroy_all
 Favorite.destroy_all
 
-5.times do
-  User.create!(
-    username: Faker::Internet.unique.username,
-    email: Faker::Internet.unique.email,
-    password: 'password'
-  )
-end
 
-10.times do
+test_user = User.create!(
+  username: "test_user",
+  email: "test@email.com",
+  password: 'password'
+)
+
+football_players.each do |name|
   Player.create!(
-    name: Faker::Name.unique.name,
-    api_id: Faker::Alphanumeric.unique.alphanumeric(number: 10)
+    name: name
   )
 end
 
-User.all.each do |user|
-  Player.all.sample(5).each do |player|
-    Favorite.create!(
-      user: user,
-      player: player
-    )
-  end
+Player.all.sample(5).each do |player|
+  Favorite.create!(
+    user: test_user,
+    player: player
+  )
 end
+
+puts "#{User.count} users created"
+puts "#{Player.count} players created"
+puts "#{Favorite.count} favorites created"
